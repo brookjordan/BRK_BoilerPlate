@@ -1,0 +1,95 @@
+$h: 100px;
+
+.carousel {
+	position: relative;
+	top: 0;
+	left: 0;
+
+	height: $h;
+	width: 94%;
+	margin: 3%;
+
+	overflow: hidden;
+}
+
+.viewFinder {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	height: $h;
+	margin-left: 0px;
+
+	transition-property: left, margin-left;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+
+.film {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transition-property: left;
+	transition-duration: .3s;
+	transition-timing-function: ease-out;
+
+	@extend .cf;
+}
+
+.item {
+	float: left;
+
+	height: $h;
+
+	background: #CCC;
+
+	transition: box-shadow .4s;
+
+	&:nth-child( 2n ) {
+		background: #333;
+	}
+
+	&--focused {
+		box-shadow: inset 0 0 20px red;
+	}
+}
+
+
+
+.frst, .rwnd, .prev, .next, .ffwd, .last {
+	float: left;
+
+	width: 14%;
+	height: $h;
+	padding: 0;
+	border: 0;
+	margin: .5%;
+
+	background: #444;
+	outline: none;
+	border-radius: 20px;
+
+	text-align: center;
+	color: white;
+
+	cursor: pointer;
+
+	transition-property: background;
+	transition-duration: .2s;
+
+	&:hover {
+		background: black;
+	}
+}
+.next, .ffwd, .last {
+	float: right;
+}
+.frst {
+
+	margin-left: 3%;
+}
+.last {
+
+	margin-right: 3%;
+}
